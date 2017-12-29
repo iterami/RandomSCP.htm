@@ -4,7 +4,10 @@ function generate(){
     var article = core_random_integer({
       'max': 3999,
     }) + 1;
-    if(article < 100){
+    if(article < 10){
+        article = '00' + article;
+
+    }else if(article < 100){
         article = '0' + article;
     }
 
