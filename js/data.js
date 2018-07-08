@@ -1,7 +1,7 @@
 'use strict';
 
 function generate(){
-    var article = core_random_integer({
+    let article = core_random_integer({
       'max': 3999,
     }) + 1;
     if(article < 10){
