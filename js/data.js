@@ -2,8 +2,8 @@
 
 function generate(){
     let article = core_random_integer({
-      'max': 3999,
-    }) + 1;
+      'max': 5000,
+    });
     if(article < 10){
         article = '00' + article;
 
