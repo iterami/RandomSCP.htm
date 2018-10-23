@@ -1,9 +1,17 @@
 'use strict';
 
-function generate(){
-    let article = core_random_integer({
-      'max': 5000,
+function generate(args){
+    args = core_args({
+      'args': args,
+      'defaults': {
+        'max': 5000,
+        'min': 0,
+      },
     });
+
+    let article = core_random_integer({
+      'max': args['max'] - args['min'],
+    }) + args['min'];
     if(article < 10){
         article = '00' + article;
 
