@@ -1,23 +1,30 @@
 'use strict';
 
 function repo_init(){
+    let events = {
+      'generate': {
+        'onclick': generate,
+      },
+    };
+    let keybinds = {
+      49: {
+        'todo': generate,
+      },
+    };
     let max = 5000;
-    let buttons = '';
-    for(let i = 0; i < max; i+= 1000){
-        buttons += '<tr><td><input id=generate-' + i + ' type=button value="' + i + ' to ' + (i + 999) + ' [' + (i / 1000 + 2) + ']">';
-    }
-    document.getElementById('buttons').innerHTML += buttons;
-    for(let i = 0; i < max; i+= 1000){
-        let elements = {};
-        let keybinds = {};
+    let links = '';
 
-        elements['generate-' + i] = {
+    for(let i = 0; i < max; i+= 1000){
+        links += '<tr><td>'
+          + '<a class=external id=generate-' + i + '>' + i + ' to ' + (i + 999) + ' [' + (i / 1000 + 2) + ']</a>';
+
+        events['generate-' + i] = {
           'onclick': function(){
               generate({
                 'max': i + 999,
                 'min': i,
               });
-          },
+          }
         };
         keybinds[i / 1000 + 50] = {
           'todo': function(){
@@ -27,24 +34,12 @@ function repo_init(){
               });
           },
         };
-
-        core_events_bind({
-          'elements': elements,
-          'keybinds': keybinds,
-        });
     }
+    document.getElementById('links').innerHTML += links;
 
     core_repo_init({
-      'events': {
-        'generate': {
-          'onclick': generate,
-        },
-      },
-      'keybinds': {
-        49: {
-          'todo': generate,
-        },
-      },
+      'events': events,
+      'keybinds': keybinds,
       'title': 'RandomSCP.htm',
     });
 }
