@@ -9,15 +9,12 @@ function generate(args){
       },
     });
 
-    let article = core_random_integer({
-      'max': args['max'] - args['min'],
-    }) + args['min'];
-    if(article < 10){
-        article = '00' + article;
-
-    }else if(article < 100){
-        article = '0' + article;
-    }
+    let article = core_digits_min({
+      'digits': 3,
+      'number': core_random_integer({
+        'max': args['max'] - args['min'],
+      }) + args['min'],
+    });
 
     window.open(
       'http://scp-wiki.net/scp-' + article,
