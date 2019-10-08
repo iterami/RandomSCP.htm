@@ -16,7 +16,7 @@ function repo_init(){
 
     for(let i = 0; i < max; i+= 1000){
         links += '<tr><td>'
-          + '<a class=external id=generate-' + i + '>' + i + ' to ' + (i + 999) + ' [' + (i / 1000 + 2) + ']</a>';
+          + '<a class=external href=javascript:; id=generate-' + i + '>' + i + ' to ' + (i + 999) + ' [' + (i / 1000 + 2) + ']</a>';
 
         events['generate-' + i] = {
           'onclick': function(){
