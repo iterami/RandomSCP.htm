@@ -40,6 +40,10 @@ function repo_init(){
     core_repo_init({
       'events': events,
       'keybinds': keybinds,
+      'storage': {
+        'target': '_blank',
+      },
+      'storage-menu': '<table><tr><td><input id=target><td>Target</table>',
       'title': 'RandomSCP.htm',
     });
 }

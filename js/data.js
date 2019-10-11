@@ -18,6 +18,6 @@ function generate(args){
 
     window.open(
       'http://scp-wiki.net/scp-' + article,
-      '_blank'
+      core_storage_data['target']
     );
 }
