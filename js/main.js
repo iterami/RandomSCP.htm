@@ -3,33 +3,31 @@
 function repo_init(){
     let events = {
       'generate': {
-        'onclick': generate,
+        'onclick': function(){
+            random_scp();
+        },
       },
     };
     let keybinds = {
       49: {
-        'todo': generate,
+        'todo': function(){
+            random_scp();
+        },
       },
     };
     let max = 5000;
     let links = '';
 
     for(let i = 0; i < max; i+= 1000){
-        links += '<tr><td>'
-          + '<a class=external href=javascript:; id=generate-' + i + '>' + i + ' to ' + (i + 999) + ' [' + (i / 1000 + 2) + ']</a>';
+        let this_max = i + 999;
 
-        events['generate-' + i] = {
-          'onclick': function(){
-              generate({
-                'max': i + 999,
-                'min': i,
-              });
-          }
-        };
+        links += '<tr><td>'
+          + '<a class=external href="javascript:random_scp(' + i + ',' + this_max + ');">' + i + ' to ' + this_max + ' [' + (i / 1000 + 2) + ']</a>';
+
         keybinds[i / 1000 + 50] = {
           'todo': function(){
               generate({
-                'max': i + 999,
+                'max': this_max,
                 'min': i,
               });
           },

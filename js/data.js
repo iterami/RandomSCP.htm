@@ -1,19 +1,14 @@
 'use strict';
 
-function generate(args){
-    args = core_args({
-      'args': args,
-      'defaults': {
-        'max': 5000,
-        'min': 0,
-      },
-    });
+function random_scp(min, max){
+    min = min || 0;
+    max = max || 5000;
 
     let article = core_digits_min({
       'digits': 3,
       'number': core_random_integer({
-        'max': args['max'] - args['min'],
-      }) + args['min'],
+        'max': max - min,
+      }) + min,
     });
 
     window.open(
