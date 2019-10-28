@@ -1,13 +1,6 @@
 'use strict';
 
 function repo_init(){
-    let events = {
-      'generate': {
-        'onclick': function(){
-            random_scp();
-        },
-      },
-    };
     let keybinds = {
       49: {
         'todo': function(){
@@ -26,17 +19,16 @@ function repo_init(){
 
         keybinds[i / 1000 + 50] = {
           'todo': function(){
-              generate({
-                'max': this_max,
-                'min': i,
-              });
+              random_scp(
+                i,
+                this_max
+              );
           },
         };
     }
     document.getElementById('links').innerHTML += links;
 
     core_repo_init({
-      'events': events,
       'keybinds': keybinds,
       'storage': {
         'target': '_blank',
