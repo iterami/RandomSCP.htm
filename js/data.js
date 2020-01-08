@@ -13,6 +13,7 @@ function random_scp(min, max){
 
     window.open(
       'http://scp-wiki.net/scp-' + article,
-      core_storage_data['target']
+      core_storage_data['target'],
+      'noopener'
     );
 }
