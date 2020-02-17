@@ -1,18 +1,18 @@
 'use strict';
 
 function repo_init(){
-    let keybinds = {
+    const keybinds = {
       49: {
         'todo': function(){
             random_scp();
         },
       },
     };
-    let max = 5000;
+    const max = 5000;
     let links = '';
 
     for(let i = 0; i < max; i+= 1000){
-        let this_max = i + 999;
+        const this_max = i + 999;
 
         links += '<tr><td>'
           + '<a class=external href="javascript:random_scp(' + i + ',' + this_max + ');">' + i + ' to ' + this_max + ' [' + (i / 1000 + 2) + ']</a>';
