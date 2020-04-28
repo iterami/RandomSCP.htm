@@ -12,7 +12,7 @@ function random_scp(min, max){
     });
 
     globalThis.open(
-      'http://scp-wiki.net/scp-' + article,
+      core_storage_data['url'] + article,
       core_storage_data['target'],
       'noopener'
     );
