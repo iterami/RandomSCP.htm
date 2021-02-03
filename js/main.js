@@ -34,7 +34,7 @@ function repo_init(){
       'keybinds': keybinds,
       'storage': {
         'target': '_blank',
-        'url': 'http://scpwiki.com/scp-',
+        'url': 'https://scp-wiki.wikidot.com/scp-',
       },
       'storage-menu': '<table><tr><td><input id=target><td>Target'
         + '<tr><td><input id=url><td>URL</table>',
