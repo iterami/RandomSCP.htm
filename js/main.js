@@ -8,7 +8,7 @@ function repo_init(){
         },
       },
     };
-    const max = 6000;
+    const max = 7000;
     let links = '';
 
     for(let i = 0; i < max; i += 1000){

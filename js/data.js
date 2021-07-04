@@ -2,7 +2,7 @@
 
 function random_scp(min, max){
     min = min || 0;
-    max = max || 6000;
+    max = max || 7000;
 
     const article = core_digits_min({
       'digits': 3,
